@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css'
+import { binanceLogo, dailyCipher, dailyCombo, dailyReward, dollarCoin, hamsterCoin, mainCharacter } from './images';
 import Hamster from './icons/Hamster'
 import Info from './icons/Info.tsx';
 import Settings from './icons/Settings.tsx';
@@ -168,11 +169,11 @@ useEffect(() => { // this 'useEffect()' hook for updating countdowns for daily e
               </div>
             </div>
             <div className="flex items-center w-2/3 border-2 border-[#43433b] rounded-full px-4 py-[2px] bg-[#43433b]/[0.6] max-w-64"> {/* w-2/3 - sets the width to 2/3 of the parent container, border-2 - adds a two pixel border around the div, px-4 - adds horizontal padding of one rem on both sides, py-[2px] - adds vertical padding of two pixels on both sides max-w-64 - sets the maximum width to 16 rem */}
-              <img src="src/images/binance-logo.png" alt="Exchange" className="w-8 h-8" /> {/* alt - alternative text for the image, w-8 and h-8 - sets width and height of the image to 2 rem*/}
+              <img src={binanceLogo} alt="Exchange" className="w-8 h-8" /> {/* alt - alternative text for the image, w-8 and h-8 - sets width and height of the image to 2 rem*/}
               <div className="flex-1 text-center"> {/* flex-1 - allows the div to grow and take up the available space within its flex container */}
                 <p className="text-xs text-[#85827d] font-medium">Profit per hour</p> {/* text-xs - sets the text size to extra small  */}
                 <div className="flex items-center justify-center space-x-1"> {/* space-x-1 - adds horizontal space of 0.25 rem between child elements */}
-                  <img src="/src/images/dollar-coin.png" alt="Dollar Coin" className="w-[18px] h-[18px]" />
+                  <img src={dollarCoin} alt="Dollar Coin" className="w-[18px] h-[18px]" />
                   <p className="text-sm">{formatProfitPerHour(profitPerHour)}</p> {/* text-sm -sets text size to small, and it contains the result of the 'formatProfitPerHour' function which formats the profit per hour */}
                   <Info size={20} className="text-[#43433b]" /> {/* size = {20} - sets the sizez of the info component to 20 pixels */}
                 </div>
@@ -187,21 +188,21 @@ useEffect(() => { // this 'useEffect()' hook for updating countdowns for daily e
               <div className='="px-4 mt-6 flex justify-between gap-2'> {/* px-4 - adds padding of one rem on the left and right sides , mt-6 - adds a margin top of 1.5 rem , justify-between - distributes space between child elements placing them at the start and end of the container, gap-2 - adds a gap (разрыв) of 0.5 rem between child elements*/}
                 <div className="bg-[#272a2f] rounded-lg px-4 py-2 w-full relative"> {/* rounded-lg - applies large rounded corners to the div , px-4 - adds padding of one rem on the left and right sides , py-2 - adds padding  of 0.5 rem on the top and bottom , w-full - sets the width to 100% relative - sets the positioning to relative */}
                   <div className="dot"></div> {/* here defined the div with 'dot' class to display a blinking dot */}
-                  <img src="/src/images/daily-reward.png" alt="Daily Reward" className="mx-auto w-12 h-12" /> {/* mx-auto - centers the image horizontally, that we see in its container */}
+                  <img src={dailyReward} alt="Daily Reward" className="mx-auto w-12 h-12" /> {/* mx-auto - centers the image horizontally, that we see in its container */}
                   <p className="text-[10px] text-center text-white mt-1">Daily reward</p> {/* mt-1 - adds a margin top of 0.25 frame */}
                   <p className="text-[10px] font-medium text-center text-gray-400 mt-2">{dailyRewardTimeLeft}</p> {/* m-2 - adds a margin top of 0.5 ram */}
                 </div>
 
                 <div className="bg-[#272a2f] rounded-lg px-4 py-2 w-full relative">
                   <div className="dot"></div>
-                  <img src="/src/images/daily-cipher.png" alt="Daily Cipher" className="mx-auto w-12 h-12" />
+                  <img src={dailyCipher} alt="Daily Cipher" className="mx-auto w-12 h-12" />
                   <p className="text-[10px] text-center text-white mt-1">Daily cipher</p>
                   <p className="text-[10px] font-medium text-center text-gray-400 mt-2">{dailyCipherTimeLeft}</p>
                 </div>
 
                 <div className="bg-[#272a2f] rounded-lg px-4 py-2 w-full relative">
                   <div className="dot"></div>
-                  <img src="/src/images/daily-combo.png" alt="Daily combo" className="mx-auto w-12 h-12" />
+                  <img src={dailyCombo} alt="Daily combo" className="mx-auto w-12 h-12" />
                   <p className="text-[10px] text-center text-white mt-1">Daily combo</p>
                   <p className="text-[10px] font-medium text-center text-gray-400 mt-2">{dailyComboTimeLeft}</p>
                 </div>
@@ -210,7 +211,7 @@ useEffect(() => { // this 'useEffect()' hook for updating countdowns for daily e
 
               <div className="px-4 mt-1 flex justify-center">
                   <div className="px-4 py-2 flex items-center space-x-2"> {/* space-x-2 - adds a horizontal space of 0.5 rem between child elements */}
-                    <img src="/src/images/dollar-coin.png" alt="Dollar coin" className="w-10 h-10" />
+                    <img src={dollarCoin} alt="Dollar coin" className="w-10 h-10" />
                     <p className="text-4xl text-while">{points.toLocaleString()}</p> {/* text-4xl - sets the text size 36px, {point.toLocaleString} - displaya the 'points' state variable formatted as a 'localized string' */}
                   </div>
                 </div>
@@ -218,7 +219,7 @@ useEffect(() => { // this 'useEffect()' hook for updating countdowns for daily e
               <div className="px-4 mt-4 flex justify-center">
                 <div className="w-80 h-80 p-4 rounded-full circle-outer" onClick={handleCardClick}> {/* p-4 - adds the padding of 1 rem on all sides, rounded-full - applies full rounding to create a circular shape, circle-outer - applies custom styles defined in the '.cicrle-outer' CSS class , 'onClick={handleCardClick}' - attaches an 'event handler' to the div to handle click events*/}
                   <div className="w-full h-full rounded-full circle-inner"> {/* circle-inner - applies custom styles defined in the '.circle-inner' CCS class*/}
-                    <img src="src/images/main-character.png" alt="Main Character" className="w-full h-full" />
+                    <img src={mainCharacter} alt="Main Character" className="w-full h-full" />
                   </div>
                 </div>
               </div>
@@ -228,7 +229,7 @@ useEffect(() => { // this 'useEffect()' hook for updating countdowns for daily e
 
       <div className="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-[calc(100%-2rem)] max-w-xl bg-[#272a2f] flex justify-around items-center z-50 rounded-3xl text-xs"> {/* fixed - fixes the element to the specified position, which relative to the viewport, bottom-0 - positions the element at the bottom of the viewport left-1/2 - positions the element at the horizontal 'center' of the viewport, ' transform - translate-x-1/2 ' - translates (переместить) the element to the left 50% of its width to center it, ' w-[calc(100%-2rem)] ' - sets the width to full viewport width '- 2rem' , max-w-xl - sets the maximum width to 36rem , justify-around - distributes space around the child elements, placing them evenly (равномерно) within the container , z-50 - sets the z index to 50 making sure the element appears (появляется) above other content , text-xs - makes font size extra small */}
         <div className="text-center text-[#85827d] w-1/5 bg-[#1c1f24] m-1 p-2 rounded-2x1">
-          <img src="src/images/binance-logo.png" alt="Exchange" className="w-8 h-8 mx-auto" /> {/* mx-auto - centers the image horizontally within its container */}
+          <img src={binanceLogo} alt="Exchange" className="w-8 h-8 mx-auto" /> {/* mx-auto - centers the image horizontally within its container */}
           <p className="mt-1">Exchange</p>
 
         
@@ -249,7 +250,7 @@ useEffect(() => { // this 'useEffect()' hook for updating countdowns for daily e
         </div>
 
         <div className="text-center text-[#85827d] w-1/5">
-          <img src="src/images/hamster-coin.png" alt="Airdrop" className="w-8 h-8 mx-auto" />
+          <img src={hamsterCoin} alt="Airdrop" className="w-8 h-8 mx-auto" />
           <p className="mt-1">Airdrop</p>
         </div>
       </div>
