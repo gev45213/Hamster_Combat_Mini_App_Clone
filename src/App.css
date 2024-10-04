@@ -1,0 +1,66 @@
+.progress-gradient {
+    background: linear-gradient(to right, #90ef89, #d692dd, #726edd);
+    /*setting a linear-gradient background from 'light green' to to 'light purple' to 'dark purpe'* ; going FROM LEFT TO RIGHT*/
+}
+
+.top-glow {
+    box-shadow: 0 -26px 20px rgba(243, 186, 47, 0.3);
+    /*box-shadow - applies a box shadow to the top of the element with an offset of 26 pixels vertically a blur radius 20 and a color of a semi transparent yellow*/
+    /*this class creates a glowing effect at the top of the element*/
+}
+
+/*Define the keyftames for the blinking animation */
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/*Apply the animation to the dot class */ /* Applies the small white dot that blinks on and off continiously */
+.dot {
+    width: 6px;
+    height: 6px;
+    background-color: white;
+    border-radius: 50%; /* makes the element a circle  */
+    position: absolute; /* position absolute positions (позиционирует) the element absolutely */
+    top: 10px;
+    right: 10px;
+    animation: blink 1s infinite; /* applies the blink animation to the element making it blink with a one 2nd cycle (заставляя его мигать с одним 2-м циклом) that repeats infinitely */
+}
+
+.circle-outer {
+    background: linear-gradient(to bottom, #575def, #202731); /* this sets a linear gradient background that transitions form a purple color to a dark purple color from top to bottom */
+    display: flex;
+    align-items: center; /* align - выравнивать */
+    justify-content: center;
+    width: 90vw; /* sets the width to 90% of the viewport width (ширина видового экрана) */
+    height: 90vw;
+    max-width: 360px;
+    max-height: 360px; /* the last two maintains the square shape */
+}
+
+.circle-inner {
+    background: radial-gradient(circle, #4960b2, #282e3e); /* radial-gradient - sets a radial gradient background that transitions (переходит) from a purple color in the center to a dark purple gray color at the edges*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); /* adds a slight shadow below the element creating a subtle (тонкий) 3D effect  */
+}
+
+@keyframes float {
+    0% { /* at 0% the beggining of the animation, opacity is one, the element is fully opaque (непрозрачный)*/
+        opacity: 1;
+        transform: translateY(0); /* the element in its original vertical position*/
+    }
+    100%{ /* at 100% - the end of the animation */
+        opacity: 0; /* opacity is zero - the element becomes fully transparent */
+        transform: translateY(-50px); /* the element moves 50 pixels upwards (вверх) */
+    }
+}
