@@ -133,6 +133,8 @@ useEffect(() => { // this 'useEffect()' hook for updating countdowns for daily e
     const interval = setInterval(() => { //set up the interval that runs every one second using 'setInterval()' function
       setPoints(prevPoint => prevPoint + pointsPerSecond); //call this function to update the points state (состояние) 
     }, 1000); //we use the function form 'setPoints()' to access the previous state 'prevPoints'  and add points per second to it
+
+    return () => clearInterval(interval);
   }, [profitPerHour]); //the dependency (зависимость) 'profitPerHour' ensures that the 'useEffect()' runs initially (первоночально) and whenever (всякий раз, когда) the 'profitPerHour' changes
 
   return (
